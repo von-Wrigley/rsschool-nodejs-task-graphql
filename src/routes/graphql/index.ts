@@ -1,6 +1,9 @@
 import { FastifyPluginAsyncTypebox } from '@fastify/type-provider-typebox';
 import { createGqlResponseSchema, gqlResponseSchema } from './schemas.js';
-import { graphql } from 'graphql';
+import { graphql,GraphQLNonNull, GraphQLFloat, GraphQLInt, GraphQLBoolean, GraphQLEnumType, GraphQLList, GraphQLObjectType, GraphQLSchema, GraphQLString, GraphQLInputObjectType } from 'graphql';
+import { randomInt, randomUUID } from 'node:crypto';
+import { UUIDType } from './types/uuid.js';
+
 
 const plugin: FastifyPluginAsyncTypebox = async (fastify) => {
   const { prisma } = fastify;
